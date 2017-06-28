@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv;
     @Inject
     Cloth cloth;
+    @Inject
+    Student student;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,6 @@ public class MainActivity extends AppCompatActivity {
         tv = (TextView) findViewById(R.id.tv);
         DaggerMainComponent.builder().mainModule(new MainModule()).build().inject(this);
         cloth.setColor("蓝色");
-        tv.setText("我现在有"+cloth);
+        tv.setText("我现在有"+ student);
     }
 }
